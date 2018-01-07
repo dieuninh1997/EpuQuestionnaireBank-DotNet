@@ -30,24 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuestionDetail));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbMinus = new System.Windows.Forms.Label();
             this.lbExit = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdSingle = new System.Windows.Forms.RadioButton();
-            this.rdMulti = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbSubject = new System.Windows.Forms.ComboBox();
-            this.btnGuide = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnGuide = new System.Windows.Forms.Button();
+            this.cmbSubject = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdMulti = new System.Windows.Forms.RadioButton();
+            this.rdSingle = new System.Windows.Forms.RadioButton();
             this.txtView = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,6 +62,34 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(871, 37);
             this.panel1.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lbMinus
+            // 
+            this.lbMinus.Image = ((System.Drawing.Image)(resources.GetObject("lbMinus.Image")));
+            this.lbMinus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbMinus.Location = new System.Drawing.Point(793, 7);
+            this.lbMinus.Name = "lbMinus";
+            this.lbMinus.Size = new System.Drawing.Size(29, 26);
+            this.lbMinus.TabIndex = 4;
+            // 
+            // lbExit
+            // 
+            this.lbExit.Image = ((System.Drawing.Image)(resources.GetObject("lbExit.Image")));
+            this.lbExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbExit.Location = new System.Drawing.Point(830, 7);
+            this.lbExit.Name = "lbExit";
+            this.lbExit.Size = new System.Drawing.Size(40, 26);
+            this.lbExit.TabIndex = 3;
             // 
             // label9
             // 
@@ -87,85 +115,18 @@
             this.panel2.Size = new System.Drawing.Size(341, 245);
             this.panel2.TabIndex = 9;
             // 
-            // lbMinus
+            // btnCancel
             // 
-            this.lbMinus.Image = ((System.Drawing.Image)(resources.GetObject("lbMinus.Image")));
-            this.lbMinus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbMinus.Location = new System.Drawing.Point(793, 7);
-            this.lbMinus.Name = "lbMinus";
-            this.lbMinus.Size = new System.Drawing.Size(29, 26);
-            this.lbMinus.TabIndex = 4;
-            // 
-            // lbExit
-            // 
-            this.lbExit.Image = ((System.Drawing.Image)(resources.GetObject("lbExit.Image")));
-            this.lbExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbExit.Location = new System.Drawing.Point(830, 7);
-            this.lbExit.Name = "lbExit";
-            this.lbExit.Size = new System.Drawing.Size(40, 26);
-            this.lbExit.TabIndex = 3;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rdMulti);
-            this.groupBox1.Controls.Add(this.rdSingle);
-            this.groupBox1.Location = new System.Drawing.Point(12, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(312, 50);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Select Question Type";
-            // 
-            // rdSingle
-            // 
-            this.rdSingle.AutoSize = true;
-            this.rdSingle.Location = new System.Drawing.Point(20, 19);
-            this.rdSingle.Name = "rdSingle";
-            this.rdSingle.Size = new System.Drawing.Size(99, 17);
-            this.rdSingle.TabIndex = 1;
-            this.rdSingle.TabStop = true;
-            this.rdSingle.Text = "Single Question";
-            this.rdSingle.UseVisualStyleBackColor = true;
-            // 
-            // rdMulti
-            // 
-            this.rdMulti.AutoSize = true;
-            this.rdMulti.Location = new System.Drawing.Point(197, 19);
-            this.rdMulti.Name = "rdMulti";
-            this.rdMulti.Size = new System.Drawing.Size(92, 17);
-            this.rdMulti.TabIndex = 2;
-            this.rdMulti.TabStop = true;
-            this.rdMulti.Text = "Multi Question";
-            this.rdMulti.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Select A Subject";
-            // 
-            // cmbSubject
-            // 
-            this.cmbSubject.FormattingEnabled = true;
-            this.cmbSubject.Location = new System.Drawing.Point(12, 102);
-            this.cmbSubject.Name = "cmbSubject";
-            this.cmbSubject.Size = new System.Drawing.Size(312, 21);
-            this.cmbSubject.TabIndex = 2;
-            // 
-            // btnGuide
-            // 
-            this.btnGuide.Image = ((System.Drawing.Image)(resources.GetObject("btnGuide.Image")));
-            this.btnGuide.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuide.Location = new System.Drawing.Point(12, 150);
-            this.btnGuide.Name = "btnGuide";
-            this.btnGuide.Size = new System.Drawing.Size(75, 59);
-            this.btnGuide.TabIndex = 3;
-            this.btnGuide.Text = "Guide";
-            this.btnGuide.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuide.UseVisualStyleBackColor = true;
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(226, 150);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 59);
+            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Text = "Cacel";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnUpdate
             // 
@@ -179,17 +140,68 @@
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // btnCancel
+            // btnGuide
             // 
-            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
-            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(226, 150);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 59);
-            this.btnCancel.TabIndex = 5;
-            this.btnCancel.Text = "Cacel";
-            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnGuide.Image = ((System.Drawing.Image)(resources.GetObject("btnGuide.Image")));
+            this.btnGuide.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuide.Location = new System.Drawing.Point(12, 150);
+            this.btnGuide.Name = "btnGuide";
+            this.btnGuide.Size = new System.Drawing.Size(75, 59);
+            this.btnGuide.TabIndex = 3;
+            this.btnGuide.Text = "Guide";
+            this.btnGuide.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuide.UseVisualStyleBackColor = true;
+            this.btnGuide.Click += new System.EventHandler(this.btnGuide_Click);
+            // 
+            // cmbSubject
+            // 
+            this.cmbSubject.FormattingEnabled = true;
+            this.cmbSubject.Location = new System.Drawing.Point(12, 102);
+            this.cmbSubject.Name = "cmbSubject";
+            this.cmbSubject.Size = new System.Drawing.Size(312, 21);
+            this.cmbSubject.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Select A Subject";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rdMulti);
+            this.groupBox1.Controls.Add(this.rdSingle);
+            this.groupBox1.Location = new System.Drawing.Point(12, 13);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(312, 50);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Select Question Type";
+            // 
+            // rdMulti
+            // 
+            this.rdMulti.AutoSize = true;
+            this.rdMulti.Location = new System.Drawing.Point(197, 19);
+            this.rdMulti.Name = "rdMulti";
+            this.rdMulti.Size = new System.Drawing.Size(92, 17);
+            this.rdMulti.TabIndex = 2;
+            this.rdMulti.TabStop = true;
+            this.rdMulti.Text = "Multi Question";
+            this.rdMulti.UseVisualStyleBackColor = true;
+            // 
+            // rdSingle
+            // 
+            this.rdSingle.AutoSize = true;
+            this.rdSingle.Location = new System.Drawing.Point(20, 19);
+            this.rdSingle.Name = "rdSingle";
+            this.rdSingle.Size = new System.Drawing.Size(99, 17);
+            this.rdSingle.TabIndex = 1;
+            this.rdSingle.TabStop = true;
+            this.rdSingle.Text = "Single Question";
+            this.rdSingle.UseVisualStyleBackColor = true;
             // 
             // txtView
             // 
@@ -198,16 +210,7 @@
             this.txtView.Name = "txtView";
             this.txtView.Size = new System.Drawing.Size(500, 245);
             this.txtView.TabIndex = 10;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.txtView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtView_KeyDown);
             // 
             // FormQuestionDetail
             // 
@@ -220,13 +223,14 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormQuestionDetail";
             this.Text = "FormQuestionDetail";
+            this.Load += new System.EventHandler(this.FormQuestionDetail_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

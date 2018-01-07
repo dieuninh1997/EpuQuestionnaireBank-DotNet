@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class FormStudent
+    partial class FormQuiz
     {
         /// <summary>
         /// Required designer variable.
@@ -28,22 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStudent));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuiz));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdBlock = new System.Windows.Forms.RadioButton();
-            this.rdActive = new System.Windows.Forms.RadioButton();
-            this.label6 = new System.Windows.Forms.Label();
-            this.ckbShowPwd = new System.Windows.Forms.CheckBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtUserName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cmbClassID = new System.Windows.Forms.ComboBox();
+            this.cmbSubject = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.txtQuizName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtStudentID = new System.Windows.Forms.TextBox();
+            this.txtQuizID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmbFilter = new System.Windows.Forms.ComboBox();
@@ -57,36 +51,52 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.dgvStudent = new System.Windows.Forms.DataGridView();
+            this.dgvQuiz = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbMinus = new System.Windows.Forms.Label();
             this.lbExit = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.nbSingle = new System.Windows.Forms.NumericUpDown();
+            this.nbMulti = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.nbQuizTime = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmbTeacher = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dgvExam = new System.Windows.Forms.DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQuiz)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbSingle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbMulti)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbQuizTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExam)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.groupBox1.Controls.Add(this.rdBlock);
-            this.groupBox1.Controls.Add(this.rdActive);
+            this.groupBox1.Controls.Add(this.cmbTeacher);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.nbQuizTime);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.ckbShowPwd);
-            this.groupBox1.Controls.Add(this.txtPassword);
+            this.groupBox1.Controls.Add(this.nbMulti);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtUserName);
+            this.groupBox1.Controls.Add(this.nbSingle);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.cmbClassID);
+            this.groupBox1.Controls.Add(this.cmbSubject);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtFullName);
+            this.groupBox1.Controls.Add(this.txtQuizName);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtStudentID);
+            this.groupBox1.Controls.Add(this.txtQuizID);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 48);
             this.groupBox1.Name = "groupBox1";
@@ -94,127 +104,64 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // rdBlock
-            // 
-            this.rdBlock.AutoSize = true;
-            this.rdBlock.Location = new System.Drawing.Point(334, 179);
-            this.rdBlock.Name = "rdBlock";
-            this.rdBlock.Size = new System.Drawing.Size(52, 17);
-            this.rdBlock.TabIndex = 13;
-            this.rdBlock.TabStop = true;
-            this.rdBlock.Text = "Block";
-            this.rdBlock.UseVisualStyleBackColor = true;
-            // 
-            // rdActive
-            // 
-            this.rdActive.AutoSize = true;
-            this.rdActive.Location = new System.Drawing.Point(334, 145);
-            this.rdActive.Name = "rdActive";
-            this.rdActive.Size = new System.Drawing.Size(55, 17);
-            this.rdActive.TabIndex = 12;
-            this.rdActive.TabStop = true;
-            this.rdActive.Text = "Active";
-            this.rdActive.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(266, 145);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Status";
-            // 
-            // ckbShowPwd
-            // 
-            this.ckbShowPwd.AutoSize = true;
-            this.ckbShowPwd.Location = new System.Drawing.Point(269, 109);
-            this.ckbShowPwd.Name = "ckbShowPwd";
-            this.ckbShowPwd.Size = new System.Drawing.Size(102, 17);
-            this.ckbShowPwd.TabIndex = 10;
-            this.ckbShowPwd.Text = "Show Password";
-            this.ckbShowPwd.UseVisualStyleBackColor = true;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(269, 83);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(207, 20);
-            this.txtPassword.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(266, 67);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Password";
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.Location = new System.Drawing.Point(269, 32);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(207, 20);
-            this.txtUserName.TabIndex = 7;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(266, 16);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.Size = new System.Drawing.Size(81, 13);
             this.label4.TabIndex = 6;
-            this.label4.Text = "User Name";
+            this.label4.Text = "Single Question";
             // 
-            // cmbClassID
+            // cmbSubject
             // 
-            this.cmbClassID.FormattingEnabled = true;
-            this.cmbClassID.Location = new System.Drawing.Point(23, 137);
-            this.cmbClassID.Name = "cmbClassID";
-            this.cmbClassID.Size = new System.Drawing.Size(207, 21);
-            this.cmbClassID.TabIndex = 5;
+            this.cmbSubject.FormattingEnabled = true;
+            this.cmbSubject.Location = new System.Drawing.Point(23, 179);
+            this.cmbSubject.Name = "cmbSubject";
+            this.cmbSubject.Size = new System.Drawing.Size(207, 21);
+            this.cmbSubject.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 121);
+            this.label3.Location = new System.Drawing.Point(20, 163);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Class ID";
+            this.label3.Text = "Subject ID";
             // 
-            // txtFullName
+            // txtQuizName
             // 
-            this.txtFullName.Location = new System.Drawing.Point(23, 83);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(207, 20);
-            this.txtFullName.TabIndex = 3;
+            this.txtQuizName.Location = new System.Drawing.Point(23, 83);
+            this.txtQuizName.Multiline = true;
+            this.txtQuizName.Name = "txtQuizName";
+            this.txtQuizName.Size = new System.Drawing.Size(207, 64);
+            this.txtQuizName.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(20, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Student Name";
+            this.label2.Text = "Quiz Name";
             // 
-            // txtStudentID
+            // txtQuizID
             // 
-            this.txtStudentID.Location = new System.Drawing.Point(23, 32);
-            this.txtStudentID.Name = "txtStudentID";
-            this.txtStudentID.Size = new System.Drawing.Size(207, 20);
-            this.txtStudentID.TabIndex = 1;
+            this.txtQuizID.Location = new System.Drawing.Point(23, 32);
+            this.txtQuizID.Name = "txtQuizID";
+            this.txtQuizID.Size = new System.Drawing.Size(207, 20);
+            this.txtQuizID.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(20, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Student ID";
+            this.label1.Text = "Quiz ID";
             // 
             // groupBox2
             // 
@@ -357,15 +304,15 @@
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBack.UseVisualStyleBackColor = false;
             // 
-            // dgvStudent
+            // dgvQuiz
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.dgvStudent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudent.Location = new System.Drawing.Point(12, 270);
-            this.dgvStudent.Name = "dgvStudent";
-            this.dgvStudent.Size = new System.Drawing.Size(910, 249);
-            this.dgvStudent.TabIndex = 4;
+            this.dgvQuiz.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvQuiz.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvQuiz.Location = new System.Drawing.Point(12, 295);
+            this.dgvQuiz.Name = "dgvQuiz";
+            this.dgvQuiz.Size = new System.Drawing.Size(461, 224);
+            this.dgvQuiz.TabIndex = 4;
             // 
             // panel1
             // 
@@ -379,6 +326,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(935, 37);
             this.panel1.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // lbMinus
             // 
@@ -405,63 +362,148 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(42, 12);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(273, 16);
+            this.label9.Size = new System.Drawing.Size(251, 16);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Questionnaire Bank - Student Manager";
+            this.label9.Text = "Questionnaire Bank - Quiz Manager";
             // 
-            // pictureBox1
+            // nbSingle
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.nbSingle.Location = new System.Drawing.Point(269, 33);
+            this.nbSingle.Name = "nbSingle";
+            this.nbSingle.Size = new System.Drawing.Size(120, 20);
+            this.nbSingle.TabIndex = 6;
             // 
-            // FormStudent
+            // nbMulti
+            // 
+            this.nbMulti.Location = new System.Drawing.Point(269, 83);
+            this.nbMulti.Name = "nbMulti";
+            this.nbMulti.Size = new System.Drawing.Size(120, 20);
+            this.nbMulti.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(266, 66);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Single Question";
+            // 
+            // nbQuizTime
+            // 
+            this.nbQuizTime.Location = new System.Drawing.Point(269, 132);
+            this.nbQuizTime.Name = "nbQuizTime";
+            this.nbQuizTime.Size = new System.Drawing.Size(120, 20);
+            this.nbQuizTime.TabIndex = 9;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(266, 115);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Quiz Time";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(395, 134);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 13);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Minutes";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // cmbTeacher
+            // 
+            this.cmbTeacher.FormattingEnabled = true;
+            this.cmbTeacher.Location = new System.Drawing.Point(269, 179);
+            this.cmbTeacher.Name = "cmbTeacher";
+            this.cmbTeacher.Size = new System.Drawing.Size(207, 21);
+            this.cmbTeacher.TabIndex = 13;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(266, 163);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(61, 13);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Teacher ID";
+            // 
+            // dgvExam
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.dgvExam.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvExam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvExam.Location = new System.Drawing.Point(479, 295);
+            this.dgvExam.Name = "dgvExam";
+            this.dgvExam.Size = new System.Drawing.Size(444, 224);
+            this.dgvExam.TabIndex = 6;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(204, 279);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(47, 13);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Quiz List";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(646, 279);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(130, 13);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Exam List (Auto Generate)";
+            // 
+            // FormQuiz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(935, 531);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.dgvExam);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dgvStudent);
+            this.Controls.Add(this.dgvQuiz);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormStudent";
+            this.Name = "FormQuiz";
             this.Text = "Questionnaire Bank - Student Manager";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQuiz)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbSingle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbMulti)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbQuizTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExam)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rdBlock;
-        private System.Windows.Forms.RadioButton rdActive;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox ckbShowPwd;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbClassID;
+        private System.Windows.Forms.ComboBox cmbSubject;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtFullName;
+        private System.Windows.Forms.TextBox txtQuizName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtStudentID;
+        private System.Windows.Forms.TextBox txtQuizID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cmbFilter;
@@ -475,11 +517,22 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnDeleteMore;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView dgvStudent;
+        private System.Windows.Forms.DataGridView dgvQuiz;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lbMinus;
         private System.Windows.Forms.Label lbExit;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cmbTeacher;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown nbQuizTime;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown nbMulti;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown nbSingle;
+        private System.Windows.Forms.DataGridView dgvExam;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }

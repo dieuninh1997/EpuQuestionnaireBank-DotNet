@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FormStudent : Form
+    public partial class FormQuiz : Form
     {
-        public FormStudent()
+        public FormQuiz()
         {
             InitializeComponent();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

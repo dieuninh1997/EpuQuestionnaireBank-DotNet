@@ -62,7 +62,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(815, 37);
+            this.panel1.Size = new System.Drawing.Size(979, 37);
             this.panel1.TabIndex = 8;
             // 
             // pictureBox1
@@ -79,7 +79,7 @@
             // 
             this.lbMinus.Image = ((System.Drawing.Image)(resources.GetObject("lbMinus.Image")));
             this.lbMinus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbMinus.Location = new System.Drawing.Point(735, 6);
+            this.lbMinus.Location = new System.Drawing.Point(903, 4);
             this.lbMinus.Name = "lbMinus";
             this.lbMinus.Size = new System.Drawing.Size(29, 26);
             this.lbMinus.TabIndex = 2;
@@ -88,9 +88,9 @@
             // 
             this.lbExit.Image = ((System.Drawing.Image)(resources.GetObject("lbExit.Image")));
             this.lbExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbExit.Location = new System.Drawing.Point(772, 6);
+            this.lbExit.Location = new System.Drawing.Point(940, 4);
             this.lbExit.Name = "lbExit";
-            this.lbExit.Size = new System.Drawing.Size(40, 26);
+            this.lbExit.Size = new System.Drawing.Size(27, 26);
             this.lbExit.TabIndex = 1;
             // 
             // label9
@@ -146,22 +146,25 @@
             this.btnBrower.TabIndex = 13;
             this.btnBrower.Text = "Brower";
             this.btnBrower.UseVisualStyleBackColor = false;
+            this.btnBrower.Click += new System.EventHandler(this.btnBrower_Click);
             // 
             // dgvSimpleQuestion
             // 
             this.dgvSimpleQuestion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSimpleQuestion.Location = new System.Drawing.Point(15, 118);
             this.dgvSimpleQuestion.Name = "dgvSimpleQuestion";
-            this.dgvSimpleQuestion.Size = new System.Drawing.Size(434, 191);
+            this.dgvSimpleQuestion.Size = new System.Drawing.Size(642, 191);
             this.dgvSimpleQuestion.TabIndex = 14;
+            this.dgvSimpleQuestion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSimpleQuestion_CellClick);
             // 
             // dgvMultiQuestion
             // 
             this.dgvMultiQuestion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMultiQuestion.Location = new System.Drawing.Point(15, 340);
             this.dgvMultiQuestion.Name = "dgvMultiQuestion";
-            this.dgvMultiQuestion.Size = new System.Drawing.Size(434, 191);
+            this.dgvMultiQuestion.Size = new System.Drawing.Size(642, 191);
             this.dgvMultiQuestion.TabIndex = 15;
+            this.dgvMultiQuestion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMultiQuestion_CellClick);
             // 
             // label3
             // 
@@ -183,10 +186,10 @@
             // 
             // txtView
             // 
-            this.txtView.Location = new System.Drawing.Point(466, 118);
+            this.txtView.Location = new System.Drawing.Point(676, 118);
             this.txtView.Multiline = true;
             this.txtView.Name = "txtView";
-            this.txtView.Size = new System.Drawing.Size(337, 342);
+            this.txtView.Size = new System.Drawing.Size(291, 342);
             this.txtView.TabIndex = 18;
             // 
             // btnOK
@@ -194,32 +197,34 @@
             this.btnOK.BackColor = System.Drawing.Color.Orchid;
             this.btnOK.Image = ((System.Drawing.Image)(resources.GetObject("btnOK.Image")));
             this.btnOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOK.Location = new System.Drawing.Point(519, 477);
+            this.btnOK.Location = new System.Drawing.Point(696, 477);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(147, 38);
             this.btnOK.TabIndex = 19;
             this.btnOK.Text = "Import To Database";
             this.btnOK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(703, 477);
+            this.btnCancel.Location = new System.Drawing.Point(883, 477);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 38);
             this.btnCancel.TabIndex = 20;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // FormImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 543);
+            this.ClientSize = new System.Drawing.Size(979, 543);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtView);
@@ -236,6 +241,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormImport";
             this.Text = "FormImport";
+            this.Load += new System.EventHandler(this.FormImport_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

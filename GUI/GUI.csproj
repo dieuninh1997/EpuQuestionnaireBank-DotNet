@@ -98,11 +98,11 @@
     <Compile Include="FormQuestionGuide.Designer.cs">
       <DependentUpon>FormQuestionGuide.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormStudent.cs">
+    <Compile Include="FormQuiz.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormStudent.Designer.cs">
-      <DependentUpon>FormStudent.cs</DependentUpon>
+    <Compile Include="FormQuiz.Designer.cs">
+      <DependentUpon>FormQuiz.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSubject.cs">
       <SubType>Form</SubType>
@@ -124,6 +124,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionnaireBankDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuestionnaireBankDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormClass.resx">
       <DependentUpon>FormClass.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,8 +153,8 @@
     <EmbeddedResource Include="FormQuestionGuide.resx">
       <DependentUpon>FormQuestionGuide.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormStudent.resx">
-      <DependentUpon>FormStudent.cs</DependentUpon>
+    <EmbeddedResource Include="FormQuiz.resx">
+      <DependentUpon>FormQuiz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSubject.resx">
       <DependentUpon>FormSubject.cs</DependentUpon>
@@ -178,9 +183,68 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QuestionnaireBankDataSet.xsc">
+      <DependentUpon>QuestionnaireBankDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuestionnaireBankDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuestionnaireBankDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuestionnaireBankDataSet.xss">
+      <DependentUpon>QuestionnaireBankDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{6c64680f-6ee5-4df6-90ef-a891442b4c07}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{7ac0cbda-a690-4e8e-8a88-9cefabd78fe7}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

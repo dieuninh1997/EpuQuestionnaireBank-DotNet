@@ -46,7 +46,7 @@
             this.btnStudent = new System.Windows.Forms.Button();
             this.btnClass = new System.Windows.Forms.Button();
             this.btnQues = new System.Windows.Forms.Button();
-            this.btnFaculty = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
             this.btnSubject = new System.Windows.Forms.Button();
             this.btnTeacher = new System.Windows.Forms.Button();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
@@ -227,7 +227,7 @@
             this.btnStudent.Name = "btnStudent";
             this.btnStudent.Size = new System.Drawing.Size(370, 96);
             this.btnStudent.TabIndex = 2;
-            this.btnStudent.Text = "STUDENT";
+            this.btnStudent.Text = "QUIZ";
             this.btnStudent.UseVisualStyleBackColor = false;
             this.btnStudent.Click += new System.EventHandler(this.btnStudent_Click);
             // 
@@ -263,21 +263,21 @@
             this.btnQues.UseVisualStyleBackColor = false;
             this.btnQues.Click += new System.EventHandler(this.btnQues_Click);
             // 
-            // btnFaculty
+            // btnImport
             // 
-            this.btnFaculty.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnFaculty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFaculty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFaculty.ForeColor = System.Drawing.Color.White;
-            this.btnFaculty.Image = ((System.Drawing.Image)(resources.GetObject("btnFaculty.Image")));
-            this.btnFaculty.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFaculty.Location = new System.Drawing.Point(255, 309);
-            this.btnFaculty.Name = "btnFaculty";
-            this.btnFaculty.Size = new System.Drawing.Size(370, 96);
-            this.btnFaculty.TabIndex = 5;
-            this.btnFaculty.Text = "FACULTY";
-            this.btnFaculty.UseVisualStyleBackColor = false;
-            this.btnFaculty.Click += new System.EventHandler(this.btnFaculty_Click);
+            this.btnImport.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImport.ForeColor = System.Drawing.Color.White;
+            this.btnImport.Image = ((System.Drawing.Image)(resources.GetObject("btnImport.Image")));
+            this.btnImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImport.Location = new System.Drawing.Point(255, 309);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(370, 96);
+            this.btnImport.TabIndex = 5;
+            this.btnImport.Text = "Quick IMPORT";
+            this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnSubject
             // 
@@ -326,7 +326,7 @@
             this.ClientSize = new System.Drawing.Size(1050, 530);
             this.Controls.Add(this.btnTeacher);
             this.Controls.Add(this.btnSubject);
-            this.Controls.Add(this.btnFaculty);
+            this.Controls.Add(this.btnImport);
             this.Controls.Add(this.btnQues);
             this.Controls.Add(this.btnClass);
             this.Controls.Add(this.btnStudent);
@@ -361,7 +361,7 @@
         private System.Windows.Forms.Button btnStudent;
         private System.Windows.Forms.Button btnClass;
         private System.Windows.Forms.Button btnQues;
-        private System.Windows.Forms.Button btnFaculty;
+        private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnSubject;
         private System.Windows.Forms.Button btnTeacher;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;

@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSubject));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbMinus = new System.Windows.Forms.Label();
             this.lbExit = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -50,13 +51,12 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.dgvSubject = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubject)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,6 +72,16 @@
             this.panel1.Size = new System.Drawing.Size(919, 37);
             this.panel1.TabIndex = 6;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // lbMinus
             // 
             this.lbMinus.Image = ((System.Drawing.Image)(resources.GetObject("lbMinus.Image")));
@@ -80,6 +90,7 @@
             this.lbMinus.Name = "lbMinus";
             this.lbMinus.Size = new System.Drawing.Size(29, 26);
             this.lbMinus.TabIndex = 2;
+            this.lbMinus.Click += new System.EventHandler(this.lbMinus_Click);
             // 
             // lbExit
             // 
@@ -89,6 +100,7 @@
             this.lbExit.Name = "lbExit";
             this.lbExit.Size = new System.Drawing.Size(40, 26);
             this.lbExit.TabIndex = 1;
+            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
             // 
             // label9
             // 
@@ -156,7 +168,7 @@
             this.groupBox2.Size = new System.Drawing.Size(493, 89);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Search Box";
+            this.groupBox2.Text = "Search By ID Box";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // btnSearch
@@ -170,6 +182,7 @@
             this.btnSearch.Text = "Find";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -206,6 +219,7 @@
             this.btnClear.Text = "Clear All";
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnRefresh
             // 
@@ -219,6 +233,7 @@
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnDeleteMore
             // 
@@ -232,6 +247,7 @@
             this.btnDeleteMore.Text = "Delete Selected";
             this.btnDeleteMore.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteMore.UseVisualStyleBackColor = false;
+            this.btnDeleteMore.Click += new System.EventHandler(this.btnDeleteMore_Click);
             // 
             // btnAdd
             // 
@@ -245,6 +261,7 @@
             this.btnAdd.Text = "Add New";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -258,6 +275,7 @@
             this.btnEdit.Text = "Update";
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnBack
             // 
@@ -271,6 +289,7 @@
             this.btnBack.Text = "Back Home";
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // dgvSubject
             // 
@@ -281,16 +300,8 @@
             this.dgvSubject.Name = "dgvSubject";
             this.dgvSubject.Size = new System.Drawing.Size(892, 210);
             this.dgvSubject.TabIndex = 10;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.dgvSubject.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubject_CellClick);
+            this.dgvSubject.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSubject_CellMouseDown);
             // 
             // FormSubject
             // 
@@ -306,15 +317,16 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormSubject";
             this.Text = "FormSubject";
+            this.Load += new System.EventHandler(this.FormSubject_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubject)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
