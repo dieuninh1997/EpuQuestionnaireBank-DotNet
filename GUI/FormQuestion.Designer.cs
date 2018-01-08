@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuestion));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -49,6 +50,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubQuestion)).BeginInit();
@@ -69,7 +71,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 48);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1040, 67);
+            this.groupBox1.Size = new System.Drawing.Size(1048, 59);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -77,7 +79,7 @@
             // 
             this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
             this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefresh.Location = new System.Drawing.Point(927, 11);
+            this.btnRefresh.Location = new System.Drawing.Point(924, 7);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(86, 42);
             this.btnRefresh.TabIndex = 6;
@@ -90,19 +92,20 @@
             // 
             this.btnImport.Image = ((System.Drawing.Image)(resources.GetObject("btnImport.Image")));
             this.btnImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImport.Location = new System.Drawing.Point(830, 12);
+            this.btnImport.Location = new System.Drawing.Point(827, 8);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(80, 42);
             this.btnImport.TabIndex = 5;
             this.btnImport.Text = "Import";
             this.btnImport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(703, 12);
+            this.btnAdd.Location = new System.Drawing.Point(700, 8);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(109, 42);
             this.btnAdd.TabIndex = 4;
@@ -113,7 +116,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(290, 33);
+            this.txtSearch.Location = new System.Drawing.Point(287, 24);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(249, 20);
             this.txtSearch.TabIndex = 3;
@@ -122,7 +125,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(287, 16);
+            this.label2.Location = new System.Drawing.Point(284, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 13);
             this.label2.TabIndex = 2;
@@ -131,7 +134,7 @@
             // cmbSubject
             // 
             this.cmbSubject.FormattingEnabled = true;
-            this.cmbSubject.Location = new System.Drawing.Point(19, 32);
+            this.cmbSubject.Location = new System.Drawing.Point(16, 23);
             this.cmbSubject.Name = "cmbSubject";
             this.cmbSubject.Size = new System.Drawing.Size(223, 21);
             this.cmbSubject.TabIndex = 1;
@@ -140,7 +143,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 16);
+            this.label1.Location = new System.Drawing.Point(13, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 0;
@@ -151,7 +154,7 @@
             this.dgvQuestion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQuestion.Location = new System.Drawing.Point(12, 144);
             this.dgvQuestion.Name = "dgvQuestion";
-            this.dgvQuestion.Size = new System.Drawing.Size(496, 251);
+            this.dgvQuestion.Size = new System.Drawing.Size(505, 165);
             this.dgvQuestion.TabIndex = 1;
             this.dgvQuestion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQuestion_CellClick);
             this.dgvQuestion.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvQuestion_CellMouseDown);
@@ -159,16 +162,17 @@
             // dgvSubQuestion
             // 
             this.dgvSubQuestion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSubQuestion.Location = new System.Drawing.Point(526, 144);
+            this.dgvSubQuestion.Location = new System.Drawing.Point(12, 331);
             this.dgvSubQuestion.Name = "dgvSubQuestion";
-            this.dgvSubQuestion.Size = new System.Drawing.Size(526, 122);
+            this.dgvSubQuestion.Size = new System.Drawing.Size(505, 198);
             this.dgvSubQuestion.TabIndex = 2;
             this.dgvSubQuestion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubQuestion_CellClick);
+            this.dgvSubQuestion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubQuestion_CellContentClick);
             // 
             // dgvAnswer
             // 
             this.dgvAnswer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAnswer.Location = new System.Drawing.Point(526, 285);
+            this.dgvAnswer.Location = new System.Drawing.Point(534, 144);
             this.dgvAnswer.Name = "dgvAnswer";
             this.dgvAnswer.Size = new System.Drawing.Size(526, 110);
             this.dgvAnswer.TabIndex = 3;
@@ -176,10 +180,11 @@
             // 
             // txtDisplay
             // 
-            this.txtDisplay.Location = new System.Drawing.Point(12, 401);
+            this.txtDisplay.Location = new System.Drawing.Point(534, 260);
             this.txtDisplay.Multiline = true;
             this.txtDisplay.Name = "txtDisplay";
-            this.txtDisplay.Size = new System.Drawing.Size(1040, 128);
+            this.txtDisplay.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDisplay.Size = new System.Drawing.Size(526, 269);
             this.txtDisplay.TabIndex = 4;
             // 
             // panel1
@@ -192,7 +197,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1064, 37);
+            this.panel1.Size = new System.Drawing.Size(1074, 37);
             this.panel1.TabIndex = 7;
             // 
             // pictureBox1
@@ -209,18 +214,19 @@
             // 
             this.lbMinus.Image = ((System.Drawing.Image)(resources.GetObject("lbMinus.Image")));
             this.lbMinus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbMinus.Location = new System.Drawing.Point(983, 5);
+            this.lbMinus.Location = new System.Drawing.Point(991, 4);
             this.lbMinus.Name = "lbMinus";
-            this.lbMinus.Size = new System.Drawing.Size(29, 26);
+            this.lbMinus.Size = new System.Drawing.Size(21, 26);
             this.lbMinus.TabIndex = 2;
+            this.lbMinus.Click += new System.EventHandler(this.lbMinus_Click);
             // 
             // lbExit
             // 
             this.lbExit.Image = ((System.Drawing.Image)(resources.GetObject("lbExit.Image")));
             this.lbExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbExit.Location = new System.Drawing.Point(1020, 5);
+            this.lbExit.Location = new System.Drawing.Point(1028, 4);
             this.lbExit.Name = "lbExit";
-            this.lbExit.Size = new System.Drawing.Size(40, 26);
+            this.lbExit.Size = new System.Drawing.Size(32, 26);
             this.lbExit.TabIndex = 1;
             this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
             // 
@@ -247,7 +253,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(523, 128);
+            this.label4.Location = new System.Drawing.Point(9, 315);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 13);
             this.label4.TabIndex = 7;
@@ -256,18 +262,26 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(523, 269);
+            this.label5.Location = new System.Drawing.Point(531, 128);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Answer List";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel1;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // FormQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Plum;
-            this.ClientSize = new System.Drawing.Size(1064, 541);
+            this.ClientSize = new System.Drawing.Size(1074, 541);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -316,5 +330,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

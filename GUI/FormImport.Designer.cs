@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormImport));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -46,6 +47,7 @@
             this.txtView = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSimpleQuestion)).BeginInit();
@@ -54,7 +56,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Magenta;
+            this.panel1.BackColor = System.Drawing.Color.Thistle;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lbMinus);
             this.panel1.Controls.Add(this.lbExit);
@@ -62,7 +64,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(979, 37);
+            this.panel1.Size = new System.Drawing.Size(1226, 37);
             this.panel1.TabIndex = 8;
             // 
             // pictureBox1
@@ -79,19 +81,21 @@
             // 
             this.lbMinus.Image = ((System.Drawing.Image)(resources.GetObject("lbMinus.Image")));
             this.lbMinus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbMinus.Location = new System.Drawing.Point(903, 4);
+            this.lbMinus.Location = new System.Drawing.Point(1153, 6);
             this.lbMinus.Name = "lbMinus";
             this.lbMinus.Size = new System.Drawing.Size(29, 26);
             this.lbMinus.TabIndex = 2;
+            this.lbMinus.Click += new System.EventHandler(this.lbMinus_Click);
             // 
             // lbExit
             // 
             this.lbExit.Image = ((System.Drawing.Image)(resources.GetObject("lbExit.Image")));
             this.lbExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbExit.Location = new System.Drawing.Point(940, 4);
+            this.lbExit.Location = new System.Drawing.Point(1190, 6);
             this.lbExit.Name = "lbExit";
             this.lbExit.Size = new System.Drawing.Size(27, 26);
             this.lbExit.TabIndex = 1;
+            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
             // 
             // label9
             // 
@@ -124,7 +128,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(236, 50);
+            this.label2.Location = new System.Drawing.Point(640, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 11;
@@ -132,17 +136,17 @@
             // 
             // txtPath
             // 
-            this.txtPath.Location = new System.Drawing.Point(239, 67);
+            this.txtPath.Location = new System.Drawing.Point(640, 67);
             this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(486, 20);
+            this.txtPath.Size = new System.Drawing.Size(489, 20);
             this.txtPath.TabIndex = 12;
             // 
             // btnBrower
             // 
             this.btnBrower.BackColor = System.Drawing.Color.Orchid;
-            this.btnBrower.Location = new System.Drawing.Point(731, 56);
+            this.btnBrower.Location = new System.Drawing.Point(1132, 56);
             this.btnBrower.Name = "btnBrower";
-            this.btnBrower.Size = new System.Drawing.Size(72, 38);
+            this.btnBrower.Size = new System.Drawing.Size(75, 38);
             this.btnBrower.TabIndex = 13;
             this.btnBrower.Text = "Brower";
             this.btnBrower.UseVisualStyleBackColor = false;
@@ -186,10 +190,11 @@
             // 
             // txtView
             // 
-            this.txtView.Location = new System.Drawing.Point(676, 118);
+            this.txtView.Location = new System.Drawing.Point(675, 118);
             this.txtView.Multiline = true;
             this.txtView.Name = "txtView";
-            this.txtView.Size = new System.Drawing.Size(291, 342);
+            this.txtView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtView.Size = new System.Drawing.Size(532, 342);
             this.txtView.TabIndex = 18;
             // 
             // btnOK
@@ -197,7 +202,7 @@
             this.btnOK.BackColor = System.Drawing.Color.Orchid;
             this.btnOK.Image = ((System.Drawing.Image)(resources.GetObject("btnOK.Image")));
             this.btnOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOK.Location = new System.Drawing.Point(696, 477);
+            this.btnOK.Location = new System.Drawing.Point(801, 479);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(147, 38);
             this.btnOK.TabIndex = 19;
@@ -211,7 +216,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(883, 477);
+            this.btnCancel.Location = new System.Drawing.Point(988, 479);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 38);
             this.btnCancel.TabIndex = 20;
@@ -220,11 +225,18 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel1;
+            this.bunifuDragControl1.Vertical = true;
+            // 
             // FormImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 543);
+            this.ClientSize = new System.Drawing.Size(1226, 543);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtView);
@@ -271,5 +283,6 @@
         private System.Windows.Forms.TextBox txtView;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

@@ -152,5 +152,15 @@ namespace GUI
                 txtView.SelectAll();
             }
         }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void lbMinus_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
     }
 }

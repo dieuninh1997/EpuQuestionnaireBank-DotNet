@@ -41,9 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Answer.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="Exam.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="MultiQuestion.cs" />
     <Compile Include="Question.cs" />
+    <Compile Include="Quiz.cs" />
     <Compile Include="SimpleQuestion.cs" />
     <Compile Include="Subject.cs" />
     <Compile Include="SubQuestion.cs" />

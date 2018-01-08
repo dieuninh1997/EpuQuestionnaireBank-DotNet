@@ -94,8 +94,8 @@ namespace GUI
         private void FormQuestion_Load(object sender, EventArgs e)
         {
             BindCmbSubject();
-            //BindSubQuestionData();
-            //BindAnswerData();
+            BindSubQuestionData();
+            BindAnswerData();
         }
 
         private void cmbSubject_SelectedIndexChanged(object sender, EventArgs e)
@@ -194,6 +194,26 @@ namespace GUI
         {
             this.Hide();
             new FormMain().Show();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvSubQuestion_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            new FormImport().ShowDialog();
+        }
+
+        private void lbMinus_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

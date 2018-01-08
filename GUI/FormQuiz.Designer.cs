@@ -28,10 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuiz));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbTeacher = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.nbQuizTime = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.nbMulti = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.nbSingle = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbSubject = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,8 +49,6 @@
             this.txtQuizID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cmbFilter = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -57,27 +64,30 @@
             this.lbMinus = new System.Windows.Forms.Label();
             this.lbExit = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.nbSingle = new System.Windows.Forms.NumericUpDown();
-            this.nbMulti = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.nbQuizTime = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cmbTeacher = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.dgvExam = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.createRandomExamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuViewExam = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDeleteExam = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbQuizTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbMulti)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbSingle)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuiz)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nbSingle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nbMulti)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nbQuizTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExam)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -103,6 +113,71 @@
             this.groupBox1.Size = new System.Drawing.Size(497, 209);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // cmbTeacher
+            // 
+            this.cmbTeacher.FormattingEnabled = true;
+            this.cmbTeacher.Location = new System.Drawing.Point(269, 179);
+            this.cmbTeacher.Name = "cmbTeacher";
+            this.cmbTeacher.Size = new System.Drawing.Size(207, 21);
+            this.cmbTeacher.TabIndex = 13;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(266, 163);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(61, 13);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Teacher ID";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(395, 134);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 13);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Minutes";
+            // 
+            // nbQuizTime
+            // 
+            this.nbQuizTime.Location = new System.Drawing.Point(269, 132);
+            this.nbQuizTime.Name = "nbQuizTime";
+            this.nbQuizTime.Size = new System.Drawing.Size(120, 20);
+            this.nbQuizTime.TabIndex = 9;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(266, 115);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Quiz Time";
+            // 
+            // nbMulti
+            // 
+            this.nbMulti.Location = new System.Drawing.Point(269, 83);
+            this.nbMulti.Name = "nbMulti";
+            this.nbMulti.Size = new System.Drawing.Size(120, 20);
+            this.nbMulti.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(266, 66);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Multi Question";
+            // 
+            // nbSingle
+            // 
+            this.nbSingle.Location = new System.Drawing.Point(269, 33);
+            this.nbSingle.Name = "nbSingle";
+            this.nbSingle.Size = new System.Drawing.Size(120, 20);
+            this.nbSingle.TabIndex = 6;
             // 
             // label4
             // 
@@ -166,8 +241,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.groupBox2.Controls.Add(this.cmbFilter);
-            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.btnSearch);
             this.groupBox2.Controls.Add(this.txtSearch);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Location = new System.Drawing.Point(516, 48);
@@ -177,29 +251,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search";
             // 
-            // cmbFilter
-            // 
-            this.cmbFilter.FormattingEnabled = true;
-            this.cmbFilter.Location = new System.Drawing.Point(85, 45);
-            this.cmbFilter.Name = "cmbFilter";
-            this.cmbFilter.Size = new System.Drawing.Size(302, 21);
-            this.cmbFilter.TabIndex = 15;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(44, 48);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 13);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Filter";
-            // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(85, 19);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(302, 20);
             this.txtSearch.TabIndex = 9;
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
             // label7
             // 
@@ -238,6 +296,7 @@
             this.btnClear.Text = "Clear All";
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnRefresh
             // 
@@ -251,6 +310,7 @@
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnDeleteMore
             // 
@@ -264,6 +324,7 @@
             this.btnDeleteMore.Text = "Delete Selected";
             this.btnDeleteMore.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteMore.UseVisualStyleBackColor = false;
+            this.btnDeleteMore.Click += new System.EventHandler(this.btnDeleteMore_Click);
             // 
             // btnAdd
             // 
@@ -277,6 +338,7 @@
             this.btnAdd.Text = "Add New";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -290,6 +352,7 @@
             this.btnEdit.Text = "Update";
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnBack
             // 
@@ -303,16 +366,19 @@
             this.btnBack.Text = "Back Home";
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // dgvQuiz
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.dgvQuiz.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.dgvQuiz.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvQuiz.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQuiz.Location = new System.Drawing.Point(12, 295);
             this.dgvQuiz.Name = "dgvQuiz";
             this.dgvQuiz.Size = new System.Drawing.Size(461, 224);
             this.dgvQuiz.TabIndex = 4;
+            this.dgvQuiz.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQuiz_CellClick);
+            this.dgvQuiz.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvQuiz_CellMouseDown);
             // 
             // panel1
             // 
@@ -345,6 +411,7 @@
             this.lbMinus.Name = "lbMinus";
             this.lbMinus.Size = new System.Drawing.Size(29, 26);
             this.lbMinus.TabIndex = 2;
+            this.lbMinus.Click += new System.EventHandler(this.lbMinus_Click);
             // 
             // lbExit
             // 
@@ -354,6 +421,7 @@
             this.lbExit.Name = "lbExit";
             this.lbExit.Size = new System.Drawing.Size(40, 26);
             this.lbExit.TabIndex = 1;
+            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
             // 
             // label9
             // 
@@ -366,76 +434,10 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Questionnaire Bank - Quiz Manager";
             // 
-            // nbSingle
-            // 
-            this.nbSingle.Location = new System.Drawing.Point(269, 33);
-            this.nbSingle.Name = "nbSingle";
-            this.nbSingle.Size = new System.Drawing.Size(120, 20);
-            this.nbSingle.TabIndex = 6;
-            // 
-            // nbMulti
-            // 
-            this.nbMulti.Location = new System.Drawing.Point(269, 83);
-            this.nbMulti.Name = "nbMulti";
-            this.nbMulti.Size = new System.Drawing.Size(120, 20);
-            this.nbMulti.TabIndex = 7;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(266, 66);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Single Question";
-            // 
-            // nbQuizTime
-            // 
-            this.nbQuizTime.Location = new System.Drawing.Point(269, 132);
-            this.nbQuizTime.Name = "nbQuizTime";
-            this.nbQuizTime.Size = new System.Drawing.Size(120, 20);
-            this.nbQuizTime.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(266, 115);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Quiz Time";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(395, 134);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 13);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Minutes";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
-            // cmbTeacher
-            // 
-            this.cmbTeacher.FormattingEnabled = true;
-            this.cmbTeacher.Location = new System.Drawing.Point(269, 179);
-            this.cmbTeacher.Name = "cmbTeacher";
-            this.cmbTeacher.Size = new System.Drawing.Size(207, 21);
-            this.cmbTeacher.TabIndex = 13;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(266, 163);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(61, 13);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "Teacher ID";
-            // 
             // dgvExam
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.dgvExam.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.dgvExam.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvExam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvExam.Location = new System.Drawing.Point(479, 295);
             this.dgvExam.Name = "dgvExam";
@@ -460,6 +462,83 @@
             this.label13.TabIndex = 15;
             this.label13.Text = "Exam List (Auto Generate)";
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel1;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(180, 45);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(61, 35);
+            this.btnSearch.TabIndex = 10;
+            this.btnSearch.Text = "Find";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createRandomExamToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(185, 70);
+            // 
+            // createRandomExamToolStripMenuItem
+            // 
+            this.createRandomExamToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("createRandomExamToolStripMenuItem.Image")));
+            this.createRandomExamToolStripMenuItem.Name = "createRandomExamToolStripMenuItem";
+            this.createRandomExamToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.createRandomExamToolStripMenuItem.Text = "Create random Exam";
+            this.createRandomExamToolStripMenuItem.Click += new System.EventHandler(this.createRandomExamToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editToolStripMenuItem.Image")));
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.editToolStripMenuItem.Text = "Edit this item";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deleteToolStripMenuItem.Image")));
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.deleteToolStripMenuItem.Text = "Delete this item";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuViewExam,
+            this.mnuDeleteExam});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(139, 48);
+            // 
+            // mnuViewExam
+            // 
+            this.mnuViewExam.Image = ((System.Drawing.Image)(resources.GetObject("mnuViewExam.Image")));
+            this.mnuViewExam.Name = "mnuViewExam";
+            this.mnuViewExam.Size = new System.Drawing.Size(152, 22);
+            this.mnuViewExam.Text = "View Exam";
+            this.mnuViewExam.Click += new System.EventHandler(this.mnuViewExam_Click);
+            // 
+            // mnuDeleteExam
+            // 
+            this.mnuDeleteExam.Image = ((System.Drawing.Image)(resources.GetObject("mnuDeleteExam.Image")));
+            this.mnuDeleteExam.Name = "mnuDeleteExam";
+            this.mnuDeleteExam.Size = new System.Drawing.Size(152, 22);
+            this.mnuDeleteExam.Text = "Delete Exam";
+            this.mnuDeleteExam.Click += new System.EventHandler(this.mnuDeleteExam_Click);
+            // 
             // FormQuiz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -477,8 +556,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormQuiz";
             this.Text = "Questionnaire Bank - Student Manager";
+            this.Load += new System.EventHandler(this.FormQuiz_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbQuizTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbMulti)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbSingle)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -486,10 +569,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nbSingle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nbMulti)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nbQuizTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExam)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -506,8 +588,6 @@
         private System.Windows.Forms.TextBox txtQuizID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox cmbFilter;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -534,5 +614,14 @@
         private System.Windows.Forms.DataGridView dgvExam;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem createRandomExamToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem mnuViewExam;
+        private System.Windows.Forms.ToolStripMenuItem mnuDeleteExam;
     }
 }

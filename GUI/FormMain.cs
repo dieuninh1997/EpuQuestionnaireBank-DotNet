@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entity;
 
 namespace GUI
 {
@@ -57,7 +58,7 @@ namespace GUI
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-
+            lbUserName.Text = Common.UserName;
         }
 
         private void btnStudent_Click(object sender, EventArgs e)

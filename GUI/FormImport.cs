@@ -280,7 +280,17 @@ namespace GUI
 
         private void dgvSimpleQuestion_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.RowIndex < 0) return;
+            string question = "Question: ";
+            SimpleQuestion sq = lstSimple.ElementAt(e.RowIndex);
+            question += sq.question + "\r\n";
+           // MessageBox.Show("SList question=" + lstSimple.Count);
+            for (int i = 0; i < sq.answer.Count; ++i)
+            {
+                question += (char)(65 + i) + ". " + sq.answer.ElementAt(i) + "\r\n";
+            }
+            question += "=> Correct: " + (char)(65 + sq.correctAnswer) + "\r\n";
+            txtView.Text = question;
         }
 
         private void dgvMultiQuestion_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -290,6 +300,7 @@ namespace GUI
             MultiQuestion mq = lstMulti.ElementAt(e.RowIndex);
             question += mq.content;
             question += "================================================" + "\r\n";
+            MessageBox.Show("MList question=" + lstSimple.Count);
             foreach (SimpleQuestion sq in mq.lstQuestion)
             {
                 question += sq.question + "\r\n";
@@ -305,6 +316,16 @@ namespace GUI
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void lbMinus_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

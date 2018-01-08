@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuestionDetail));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -44,6 +45,7 @@
             this.rdMulti = new System.Windows.Forms.RadioButton();
             this.rdSingle = new System.Windows.Forms.RadioButton();
             this.txtView = new System.Windows.Forms.TextBox();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -52,7 +54,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Magenta;
+            this.panel1.BackColor = System.Drawing.Color.MediumPurple;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lbMinus);
             this.panel1.Controls.Add(this.lbExit);
@@ -81,6 +83,7 @@
             this.lbMinus.Name = "lbMinus";
             this.lbMinus.Size = new System.Drawing.Size(29, 26);
             this.lbMinus.TabIndex = 4;
+            this.lbMinus.Click += new System.EventHandler(this.lbMinus_Click);
             // 
             // lbExit
             // 
@@ -90,6 +93,7 @@
             this.lbExit.Name = "lbExit";
             this.lbExit.Size = new System.Drawing.Size(40, 26);
             this.lbExit.TabIndex = 3;
+            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
             // 
             // label9
             // 
@@ -208,9 +212,17 @@
             this.txtView.Location = new System.Drawing.Point(359, 43);
             this.txtView.Multiline = true;
             this.txtView.Name = "txtView";
+            this.txtView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtView.Size = new System.Drawing.Size(500, 245);
             this.txtView.TabIndex = 10;
             this.txtView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtView_KeyDown);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel1;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // FormQuestionDetail
             // 
@@ -253,5 +265,6 @@
         private System.Windows.Forms.RadioButton rdSingle;
         private System.Windows.Forms.TextBox txtView;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

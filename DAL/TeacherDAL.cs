@@ -21,8 +21,8 @@ namespace DAL
                 dbCmd.Parameters.Add(new SqlParameter("@Where", Where));
                 dbCmd.Parameters.Add(new SqlParameter("@Order", Order));
                 SqlDataReader dr = dbCmd.ExecuteReader();
-             //   dr.Close();
-              //  dr = dbCmd.ExecuteReader();
+              //  dr.Close();
+             //  dr = dbCmd.ExecuteReader();
                 if (dr.HasRows)
                 {
                     while (dr.Read())
@@ -34,6 +34,7 @@ namespace DAL
                 }
                 dr.Close();
             }
+            Console.WriteLine("TeacherDAL List=" + list.Count);
             return list;
         }
 

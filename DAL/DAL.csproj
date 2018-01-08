@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnswerDAL.cs" />
+    <Compile Include="ExamDAL.cs" />
     <Compile Include="QuestionDAL.cs" />
+    <Compile Include="QuizDAL.cs" />
     <Compile Include="SqlDataProvider.cs" />
     <Compile Include="SubjectDAL.cs" />
     <Compile Include="SubQuestionDAL.cs" />

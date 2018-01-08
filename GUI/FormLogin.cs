@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using Entity;
 
 namespace GUI
 {
@@ -27,6 +28,7 @@ namespace GUI
             TeacherBUS obj = new TeacherBUS();
             if (obj.Teacher_LoginValid(u, p))
             {
+                Common.UserName = txtUserName.Text;
                 MessageBox.Show("Login successful!");
                 return true;
             }
