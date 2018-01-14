@@ -74,13 +74,14 @@ namespace GUI
             if (obj.Teacher_Insert(teacher))
             {
                 MessageBox.Show("Insert teacher successed!", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                BinData(" ", " ", " ");
+               
             }
             else
             {
                 MessageBox.Show("Insert teacher unsuccessed!\nNote: Username must be unique", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+            BinData(" ", " ", " ");
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -149,23 +150,28 @@ namespace GUI
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (dgvTeacher.SelectedRows[0].Index < 0)
+            if (ValidField())
             {
+                MessageBox.Show("Please fill out textbox Name!", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            int row = dgvTeacher.SelectedRows[0].Index;
-            try
+            byte[] img = null;
+            FileStream fs = new FileStream(imgLoc, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            img = br.ReadBytes((int)fs.Length);
+            Teacher teacher = new Teacher(txtTeacherID.Text, txtTeacherName.Text, txtUserName.Text, txtPassword.Text, imgLoc);
+            if (obj.Teacher_Update(teacher))
             {
-                txtTeacherID.Text = dgvTeacher.Rows[row].Cells[0].Value.ToString();
-                txtTeacherName.Text = dgvTeacher.Rows[row].Cells["name"].Value.ToString();
-                txtUserName.Text = dgvTeacher.Rows[row].Cells[2].Value.ToString();
-                txtPassword.Text = dgvTeacher.Rows[row].Cells[3].Value.ToString();
-                picAvatar.Image = System.Drawing.Image.FromFile(dgvTeacher.Rows[row].Cells["avatar"].Value.ToString());
+                MessageBox.Show("Update teacher successed!", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
-            catch
+            else
             {
-                picAvatar.Image = picAvatar.ErrorImage;
+                MessageBox.Show("update teacher unsuccessed!", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
+            BinData("", "", "");
+            Clear();
         }
 
         private void dgvTeacher_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -223,6 +229,67 @@ namespace GUI
         private void dgvTeacher_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void mnuEdit_Click(object sender, EventArgs e)
+        {
+
+            if (dgvTeacher.SelectedRows[0].Index < 0)
+            {
+                return;
+            }
+            int row = dgvTeacher.SelectedRows[0].Index;
+            try
+            {
+                txtTeacherID.Text = dgvTeacher.Rows[row].Cells[0].Value.ToString();
+                txtTeacherName.Text = dgvTeacher.Rows[row].Cells["name"].Value.ToString();
+                txtUserName.Text = dgvTeacher.Rows[row].Cells[2].Value.ToString();
+                txtPassword.Text = dgvTeacher.Rows[row].Cells[3].Value.ToString();
+                picAvatar.Image = System.Drawing.Image.FromFile(dgvTeacher.Rows[row].Cells["avatar"].Value.ToString());
+            }
+            catch
+            {
+                picAvatar.Image = picAvatar.ErrorImage;
+            }
+        }
+
+        private void mnuDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvTeacher.CurrentRow.Index < 0)
+                return;
+            if (MessageBox.Show("Delete this teacher ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (obj.Teacher_Delete(dgvTeacher.SelectedRows[0].Cells["id"].Value.ToString()))
+                {
+                    MessageBox.Show("Delete teacher successed!", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    BinData("", "", "");
+                }
+                else
+                {
+                    MessageBox.Show("Delete teacher unsuccessed!", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                try
+                {
+                    int x = int.Parse(txtSearch.Text);
+                    BinData("", " id = '" + x + "' or name like N'%" + x + "%' or username like '%" + x + "%'", "");
+                }
+                catch
+                {
+                    BinData("", " name like N'%" + txtSearch.Text + "%' or username like'%" + txtSearch.Text + "%'", "");
+                }
+            }
         }
     }
 }

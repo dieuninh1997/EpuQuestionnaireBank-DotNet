@@ -1,25 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI
+namespace GUI.Home
 {
-    public partial class FormClass : Form
+    public partial class ucHelp : UserControl
     {
-        public FormClass()
+        public ucHelp()
         {
             InitializeComponent();
-        }
-
-        private void FormClass_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

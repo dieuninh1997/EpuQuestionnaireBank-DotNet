@@ -91,7 +91,19 @@ namespace GUI
 
         }
 
-        private void btnImport_Click(object sender, EventArgs e)
+       // private void btnImport_Click(object sender, EventArgs e)
+      //  {
+        //this.Hide();
+      //      new FormImport().Show();
+      //  }
+
+        private void btnFaculty_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new FormFaculty().Show();
+        }
+
+        private void mnuQuestionImport_Click(object sender, EventArgs e)
         {
             this.Hide();
             new FormImport().Show();

@@ -27,7 +27,7 @@ namespace GUI
         //}
         private void BindGridQuiz(String t = "", String w = "", String o = "")
         {
-            List<Quiz> data = quizObj.Quiz_GetByTop(t, w, o);
+            List<Entity.Quiz> data = quizObj.Quiz_GetByTop(t, w, o);
             dgvQuiz.DataSource = data;
             dgvQuiz.Columns["id"].HeaderText = "Quiz ID";
             dgvQuiz.Columns["quizName"].HeaderText = "Quiz name";
@@ -129,7 +129,7 @@ namespace GUI
                 MessageBox.Show("Please fill out all textbox!", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            Quiz quiz = new Quiz();
+            Entity. Quiz quiz = new Entity.Quiz();
             quiz.QCountSingle = (nbSingle.Value.ToString());
             quiz.QCountMultiple = (nbMulti.Value.ToString());
             quiz.Time = (nbQuizTime.Value.ToString());
@@ -169,7 +169,7 @@ namespace GUI
                 MessageBox.Show("Please fill out all textbox!", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            Quiz quiz = new Quiz();
+            Entity.Quiz quiz = new Entity.Quiz();
             quiz.QCountSingle = (nbSingle.Value.ToString());
             quiz.QCountMultiple = (nbMulti.Value.ToString());
             quiz.Time = (nbQuizTime.Value.ToString());

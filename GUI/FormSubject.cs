@@ -16,7 +16,6 @@ namespace GUI
     {
 
         private SubjectBUS obj = new SubjectBUS();
-
         public FormSubject()
         {
             InitializeComponent();
@@ -81,6 +80,7 @@ namespace GUI
                 MessageBox.Show("Insert faculty unsuccessed!", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+           
             BindData("", "", "");
             Clear();
         }
