@@ -215,5 +215,40 @@ namespace GUI
         {
             WindowState = FormWindowState.Minimized;
         }
+
+        private void menuEdit_Click(object sender, EventArgs e)
+        {
+            string selectedValue = dgvQuestion.CurrentRow.Cells["subjectID"].Value.ToString();
+            bool isSingle = true;
+            string qid = dgvQuestion.CurrentRow.Cells["id"].Value.ToString();
+
+
+            new FormQuestionDetail(true, isSingle, selectedValue, qid).ShowDialog();
+
+        }
+
+        private void menuDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Delete this item?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                if (qbus.Question_Delete(dgvQuestion.CurrentRow.Cells["id"].Value.ToString()))
+                {
+                    MessageBox.Show("Delete success", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    BindQuestionData();
+                }
+                else
+                {
+                    MessageBox.Show("Delete unsuccess", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            if (dgvQuestion.CurrentRow.Index < 0)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

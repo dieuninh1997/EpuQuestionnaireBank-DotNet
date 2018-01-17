@@ -184,15 +184,44 @@ namespace GUI
 
         }
 
-        private void lbExit_Click(object sender, EventArgs e)
+        private void menuEdit_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new FormMain().Show();
+            if (dgvSubject.SelectedRows[0].Index < 0) return;
+            try
+            {
+                int row = dgvSubject.CurrentRow.Index;
+                txtSubjectID.Text = dgvSubject.SelectedRows[0].Cells[0].Value.ToString();
+                txtSubjectName.Text = dgvSubject.Rows[row].Cells[1].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Select a row first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
-        private void lbMinus_Click(object sender, EventArgs e)
+        private void menuDelete_Click(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Minimized;
+            if (dgvSubject.SelectedRows[0].Index < 0) return;
+            try
+            {
+                if (MessageBox.Show("Delete this subject ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (obj.Subject_Delete(dgvSubject.SelectedRows[0].Cells[0].Value.ToString()))
+                    {
+                        MessageBox.Show("Delete subject successed!", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        BindData("", "", "");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Delete subject unsuccessed!", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Select a row first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

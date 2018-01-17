@@ -32,11 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.slideMenu = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.nameProj = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.container = new System.Windows.Forms.Panel();
             this.menu_Report = new Bunifu.Framework.UI.BunifuFlatButton();
             this.menu_Tools = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -47,9 +47,11 @@
             this.btnMinus = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnMenu = new Bunifu.Framework.UI.BunifuImageButton();
+            this.ucHome1 = new GUI.Home.ucHome();
             this.panel1.SuspendLayout();
             this.slideMenu.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
@@ -73,6 +75,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1271, 49);
             this.panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Silver;
+            this.label2.Location = new System.Drawing.Point(44, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(146, 21);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Questionnaire Bank";
             // 
             // slideMenu
             // 
@@ -100,13 +113,6 @@
             this.panel3.Size = new System.Drawing.Size(257, 195);
             this.panel3.TabIndex = 0;
             // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.panel1;
-            this.bunifuDragControl1.Vertical = true;
-            // 
             // nameProj
             // 
             this.nameProj.AutoSize = true;
@@ -118,19 +124,16 @@
             this.nameProj.TabIndex = 1;
             this.nameProj.Text = "Questionnaire Bank";
             // 
-            // label2
+            // bunifuDragControl1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(44, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 21);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Questionnaire Bank";
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel1;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // container
             // 
+            this.container.Controls.Add(this.ucHome1);
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container.Location = new System.Drawing.Point(257, 49);
             this.container.Name = "container";
@@ -281,7 +284,7 @@
             // menu_Home
             // 
             this.menu_Home.Activecolor = System.Drawing.Color.Gainsboro;
-            this.menu_Home.BackColor = System.Drawing.Color.White;
+            this.menu_Home.BackColor = System.Drawing.Color.Gainsboro;
             this.menu_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menu_Home.BorderRadius = 0;
             this.menu_Home.ButtonText = "      Home";
@@ -366,6 +369,14 @@
             this.btnMenu.Zoom = 10;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
+            // ucHome1
+            // 
+            this.ucHome1.Location = new System.Drawing.Point(0, 0);
+            this.ucHome1.Name = "ucHome1";
+            this.ucHome1.Size = new System.Drawing.Size(1014, 610);
+            this.ucHome1.TabIndex = 0;
+            this.ucHome1.Load += new System.EventHandler(this.ucHome1_Load);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,6 +394,7 @@
             this.slideMenu.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
@@ -410,5 +422,6 @@
         private Bunifu.Framework.UI.BunifuImageButton btnMenu;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel container;
+        private Home.ucHome ucHome1;
     }
 }

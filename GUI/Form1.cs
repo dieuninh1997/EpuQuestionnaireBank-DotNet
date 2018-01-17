@@ -28,7 +28,7 @@ namespace GUI
             _ucTools = new Home.ucTools();
             _ucReport = new Home.ucReport();
 
-            container.Controls.Add(_ucHome);
+          //  container.Controls.Add(_ucHome);
             _ucHome.Show();
         }
 
@@ -106,6 +106,11 @@ namespace GUI
             container.Controls.Add(_ucHelp);
             _ucHelp.BringToFront();
             _ucHelp.Show();
+        }
+
+        private void ucHome1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

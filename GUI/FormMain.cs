@@ -64,7 +64,7 @@ namespace GUI
         private void btnStudent_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new FormQuiz().Show();
+            new FormStudent().Show();
         }
 
         private void btnQues_Click(object sender, EventArgs e)
@@ -88,7 +88,8 @@ namespace GUI
 
         private void btnClass_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new FormClass().Show();
         }
 
        // private void btnImport_Click(object sender, EventArgs e)

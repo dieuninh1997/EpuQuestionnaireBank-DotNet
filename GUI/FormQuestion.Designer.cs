@@ -42,21 +42,17 @@
             this.dgvSubQuestion = new System.Windows.Forms.DataGridView();
             this.dgvAnswer = new System.Windows.Forms.DataGridView();
             this.txtDisplay = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbMinus = new System.Windows.Forms.Label();
-            this.lbExit = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubQuestion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnswer)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -69,7 +65,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cmbSubject);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 48);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1048, 59);
             this.groupBox1.TabIndex = 0;
@@ -152,9 +148,9 @@
             // dgvQuestion
             // 
             this.dgvQuestion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvQuestion.Location = new System.Drawing.Point(12, 144);
+            this.dgvQuestion.Location = new System.Drawing.Point(12, 101);
             this.dgvQuestion.Name = "dgvQuestion";
-            this.dgvQuestion.Size = new System.Drawing.Size(505, 165);
+            this.dgvQuestion.Size = new System.Drawing.Size(505, 211);
             this.dgvQuestion.TabIndex = 1;
             this.dgvQuestion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQuestion_CellClick);
             this.dgvQuestion.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvQuestion_CellMouseDown);
@@ -172,79 +168,25 @@
             // dgvAnswer
             // 
             this.dgvAnswer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAnswer.Location = new System.Drawing.Point(534, 144);
+            this.dgvAnswer.Location = new System.Drawing.Point(534, 101);
             this.dgvAnswer.Name = "dgvAnswer";
-            this.dgvAnswer.Size = new System.Drawing.Size(526, 110);
+            this.dgvAnswer.Size = new System.Drawing.Size(526, 211);
             this.dgvAnswer.TabIndex = 3;
             this.dgvAnswer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnswer_CellClick);
             // 
             // txtDisplay
             // 
-            this.txtDisplay.Location = new System.Drawing.Point(534, 260);
+            this.txtDisplay.Location = new System.Drawing.Point(534, 331);
             this.txtDisplay.Multiline = true;
             this.txtDisplay.Name = "txtDisplay";
             this.txtDisplay.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDisplay.Size = new System.Drawing.Size(526, 269);
+            this.txtDisplay.Size = new System.Drawing.Size(526, 198);
             this.txtDisplay.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Magenta;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.lbMinus);
-            this.panel1.Controls.Add(this.lbExit);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1074, 37);
-            this.panel1.TabIndex = 7;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lbMinus
-            // 
-            this.lbMinus.Image = ((System.Drawing.Image)(resources.GetObject("lbMinus.Image")));
-            this.lbMinus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbMinus.Location = new System.Drawing.Point(991, 4);
-            this.lbMinus.Name = "lbMinus";
-            this.lbMinus.Size = new System.Drawing.Size(21, 26);
-            this.lbMinus.TabIndex = 2;
-            this.lbMinus.Click += new System.EventHandler(this.lbMinus_Click);
-            // 
-            // lbExit
-            // 
-            this.lbExit.Image = ((System.Drawing.Image)(resources.GetObject("lbExit.Image")));
-            this.lbExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbExit.Location = new System.Drawing.Point(1028, 4);
-            this.lbExit.Name = "lbExit";
-            this.lbExit.Size = new System.Drawing.Size(32, 26);
-            this.lbExit.TabIndex = 1;
-            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(49, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(282, 16);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Questionnaire Bank - Question Manager";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 128);
+            this.label3.Location = new System.Drawing.Point(12, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 13);
             this.label3.TabIndex = 7;
@@ -262,36 +204,53 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(531, 128);
+            this.label5.Location = new System.Drawing.Point(531, 85);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Answer List";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // bunifuDragControl1
+            // contextMenuStrip1
             // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.panel1;
-            this.bunifuDragControl1.Vertical = true;
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuEdit,
+            this.menuDelete});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(157, 70);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // menuEdit
+            // 
+            this.menuEdit.Image = ((System.Drawing.Image)(resources.GetObject("menuEdit.Image")));
+            this.menuEdit.Name = "menuEdit";
+            this.menuEdit.Size = new System.Drawing.Size(156, 22);
+            this.menuEdit.Text = "Edit this item";
+            this.menuEdit.Click += new System.EventHandler(this.menuEdit_Click);
+            // 
+            // menuDelete
+            // 
+            this.menuDelete.Image = ((System.Drawing.Image)(resources.GetObject("menuDelete.Image")));
+            this.menuDelete.Name = "menuDelete";
+            this.menuDelete.Size = new System.Drawing.Size(156, 22);
+            this.menuDelete.Text = "Delete this item";
+            this.menuDelete.Click += new System.EventHandler(this.menuDelete_Click);
             // 
             // FormQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Plum;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1074, 541);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtDisplay);
             this.Controls.Add(this.dgvAnswer);
             this.Controls.Add(this.dgvSubQuestion);
             this.Controls.Add(this.dgvQuestion);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormQuestion";
             this.Text = "Questionnaire Bank - Question Manager";
             this.Load += new System.EventHandler(this.FormQuestion_Load);
@@ -300,9 +259,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubQuestion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnswer)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,14 +279,11 @@
         private System.Windows.Forms.DataGridView dgvSubQuestion;
         private System.Windows.Forms.DataGridView dgvAnswer;
         private System.Windows.Forms.TextBox txtDisplay;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbMinus;
-        private System.Windows.Forms.Label lbExit;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuEdit;
+        private System.Windows.Forms.ToolStripMenuItem menuDelete;
     }
 }
